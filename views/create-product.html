@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Liebre</title>
+    <link rel="stylesheet" href="/css/create-product.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <img id="mercado-logo" src="/images/logo-mercado-liebre.svg" alt="Mercado Liebre ">
+            <div class="barra-busqueda">
+                <form action="" method="get">
+                    <input class="busqueda" type="search" value="buscar">
+                    <button class="busqueda" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="copy-header">
+                <i class="fas fa-hand-holding-usd"></i> Compra en cuotas y sin tarjeta de credito.
+            </div>
+        </div>
+        <a href="#" class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        <nav class="main-navbar">
+            <ul class="left-navbar">
+                <li><a href=" ">Ofertas</a></li>
+                <li><a href=" ">Tiendas oficiales</a></li>
+                <li><a href=" ">Vender</a></li>
+                <li><a href=" ">Ayuda</a></li>
+            </ul>
+            <ul class="right-navbar">
+                <li><a href="">Crea tu cuenta</a><i class="far fa-id-card navbar-icon"></i></li>
+                <li><a href="">Ingresá</a><i class="fas fa-sign-in-alt navbar-icon"></i></li>
+                <li><a href=" ">Mis compras</a><i class="fas fa-shopping-basket navbar-icon"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/product" method="POST" class="create-form">
+            <div class="control-form">
+                <label>Nombre del producto:</label>
+                <input type="text" name="product-name" class="control">
+            </div>
+            <div class="control-form">
+                <label>Precio:</label>
+                <input type="text" name="product-price" class="control">
+            </div>
+            <div class="control-form">
+                <label>Categoría:</label>
+                <select name="category" class="control">
+                    <option value="hogar">Hogar</option>
+                    <option value="electro">Electro</option>
+                    <option value="indumentaria">Indumentaria</option>
+                </select>
+            </div>
+            <div class="control-form">
+                <label>Ciudad:</label>
+                <select name="city" class="control">
+                    <option value="baires">Buenos Aires</option>
+                    <option value="rosario">Rosario</option>
+                    <option value="mendoza">Mendoza</option>
+                </select>
+            </div>
+            <div class="control-form">
+                <label>Descripcion de producto:</label>
+                <textarea name="product-description" class="control"></textarea>
+            </div>
+            <div class="control-form">
+                <label>Esta en oferta:</label>
+                <input type="radio" value="offer">
+            </div>
+            <button type="submit" class="form-button">Guardar</button>
+            <button type="reset" class="form-button">Borrar</button>
+
+        </form>
+    </main>
+</body>
+
+</html>

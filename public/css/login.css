@@ -1,0 +1,186 @@
+* {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/*Header*/
+
+.main-header {
+    background-color: #eac926;
+    padding-bottom: 15px;
+}
+
+.burger-menu {
+    background-color: #1259c3;
+    color: #ffffff;
+    display: block;
+    max-width: 35px;
+    padding: 15px 0px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+}
+
+.main-header-top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#mercado-logo {
+    width: 50%;
+}
+
+.barra-busqueda {
+    position: relative;
+}
+
+.barra-busqueda button {
+    position: absolute;
+    left: 11.5em;
+}
+
+.busqueda {
+    border-radius: 3px;
+    border: none;
+    padding: 0.4em;
+}
+
+.copy-header {
+    position: relative;
+    margin: auto;
+}
+
+.main-navbar {
+    display: none;
+    width: 100%;
+}
+
+.main-navbar ul {
+    list-style: none;
+}
+
+.main-navbar a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 10px;
+}
+
+.navbar-icon {
+    margin-left: 3px;
+}
+
+nav li {
+    padding: 5px 10px;
+    color: black;
+}
+
+.right-navbar {
+    width: 50%;
+}
+
+.left-navbar {
+    width: 50%;
+}
+
+
+/*Main*/
+
+main {
+    background-color: #ebebeb;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: wrap column;
+    align-content: center;
+    width: 100%;
+}
+
+.login-form form {
+    width: 75%;
+}
+
+.input {
+    width: 100%;
+    margin: 20px;
+    padding: 8px;
+    border-radius: 3px;
+    border: none;
+}
+
+.login-form button {
+    background-color: #1259c3;
+    color: white;
+}
+
+
+/*Footer*/
+
+footer {
+    text-align: center;
+    color: #666;
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer section i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #1259c3;
+}
+
+#copyright {
+    text-align: center;
+}
+
+@media (min-width: 361px) {
+    /*header*/
+    .main-header-top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #mercado-logo {
+        width: 33%;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .main-navbar {
+        display: flex;
+        align-items: flex-end;
+    }
+    .left-navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    .right-navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .right-navbar li {
+        width: 33%;
+    }
+}
+
+@media (min-width: 769px) {
+    /*header*/
+    .main-header-top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}

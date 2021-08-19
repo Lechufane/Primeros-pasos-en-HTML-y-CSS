@@ -13,3 +13,11 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(path.join("./views/index.html")));
 });
+
+app.get("/login", (req, res) => {
+    res.sendFile(path.resolve(path.join("./views/login.html")));
+});
+
+app.get("/create-product", (req, res) => {
+    res.sendFile(path.resolve(path.join("./views/create-product.html")));
+});
