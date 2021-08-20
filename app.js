@@ -6,8 +6,8 @@ const publicPath = path.resolve(__dirname, "./public");
 
 app.use(express.static(publicPath));
 
-app.listen(port, () => {
-    console.log(`Servidor iniciado en ${port}`);
+app.listen(process.env.PORT || port, () => {
+    console.log("Servidor iniciado");
 });
 
 app.get("/", (req, res) => {
