@@ -221,8 +221,7 @@ footer section i {
     }
     /*footer*/
     footer {
-        display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
     }
     footer section {
         width: 33%;
