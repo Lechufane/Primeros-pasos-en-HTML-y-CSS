@@ -15,6 +15,9 @@
     padding-bottom: 15px;
     position: fixed;
     top: 0;
+    width: 100%;
+    height: 147px;
+    z-index: 100;
 }
 
 .burger-menu {
@@ -40,7 +43,23 @@
 }
 
 .barra-busqueda {
-    width: 100px;
+    position: relative;
+}
+
+.barra-busqueda button {
+    position: absolute;
+    left: 11.5em;
+}
+
+.busqueda {
+    border-radius: 3px;
+    border: none;
+    padding: 0.4em;
+}
+
+.copy-header {
+    position: relative;
+    margin: auto;
 }
 
 .main-navbar {
@@ -50,14 +69,16 @@
 
 .main-navbar ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .main-navbar a {
     text-decoration: none;
     color: #222222;
     font-size: 10px;
+}
+
+.navbar-icon {
+    margin-left: 3px;
 }
 
 nav li {
@@ -76,34 +97,56 @@ nav li {
 
 /*main*/
 
-.create-form {
+main {
+    margin-top: 147px;
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+}
+
+.user-form {
     padding: 20px 15px;
-    margin-top: 130px;
-}
-
-.control-form {
-    margin-bottom: 15px;
-}
-
-.control-form label {
-    margin-bottom: 5px;
-    font-style: italic;
-    display: block;
+    width: 320px;
+    text-align: center;
+    background-color: #ebebeb;
 }
 
 .control {
     width: 100%;
-    padding: 0.5em;
+    padding: 5px;
+    margin: 5px 0;
+    border: none;
 }
 
-.form-button {
-    border: none;
+.user-form h2,
+h3 {
+    padding: 5px;
+}
+
+.user-form button {
     background-color: #1259c3;
-    width: 100%;
     color: #ffffff;
-    padding: 0.6em;
-    margin: 5px 0;
     border-radius: 5px;
+    padding: 8px;
+}
+
+
+/*Footer*/
+
+footer {
+    text-align: center;
+    color: #666;
+    padding-top: 15px;
+}
+
+footer section i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #1259c3;
+}
+
+#copyright {
+    text-align: center;
 }
 
 
@@ -115,30 +158,6 @@ nav li {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-    }
-    #mercado-logo {
-        width: 33%;
-    }
-    .burger-menu {
-        display: none;
-    }
-    .main-navbar {
-        display: flex;
-        align-items: flex-end;
-    }
-    .left-navbar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: flex-end;
-    }
-    .right-navbar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    .right-navbar li {
-        width: 33%;
     }
     #mercado-logo {
         width: 33%;

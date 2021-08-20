@@ -21,3 +21,7 @@ app.get("/login", (req, res) => {
 app.get("/create-product", (req, res) => {
     res.sendFile(path.resolve(path.join("./views/create-product.html")));
 });
+
+app.get("/create-user", (req, res) => {
+    res.sendFile(path.resolve(path.join("./views/create-user.html")));
+});
