@@ -116,13 +116,16 @@ main {
     width: 320px;
     text-align: center;
     background-color: #ebebeb;
+    text-align: center;
 }
 
 .control {
-    width: 100%;
-    padding: 5px;
+    padding: 10px;
     margin: 5px 0;
     border: none;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
 }
 
 .user-form h2,
@@ -141,6 +144,15 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+#radiobox {
+    display: flex;
+    flex-flow: wrap row;
+}
+
+.radio {
+    width: 100%;
 }
 
 
