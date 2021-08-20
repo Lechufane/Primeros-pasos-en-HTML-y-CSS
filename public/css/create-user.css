@@ -39,11 +39,18 @@
 }
 
 #mercado-logo {
-    width: 50%;
+    width: 150px;
 }
 
 .barra-busqueda {
     position: relative;
+}
+
+.barra-busqueda button {
+    position: absolute;
+    left: 11.5em;
+    top: 0;
+    right: 0;
 }
 
 .barra-busqueda button {
