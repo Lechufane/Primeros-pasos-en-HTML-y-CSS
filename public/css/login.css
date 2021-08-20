@@ -101,10 +101,12 @@ nav li {
     width: 50%;
 }
 
+
 /*Main*/
 
 main {
     background-color: #ebebeb;
+    margin-top: 147px;
 }
 
 .login-form {
@@ -155,9 +157,7 @@ footer section i {
 }
 
 @media (min-width: 361px) {
-
     /*header*/
-
     .main-header-top-bar {
         display: flex;
         flex-wrap: wrap;
@@ -209,6 +209,7 @@ footer section i {
     }
 }
 
+
 /*desktop*/
 
 @media (min-width: 769px) {
@@ -218,7 +219,6 @@ footer section i {
         flex-wrap: wrap;
         align-items: center;
     }
-
     /*footer*/
     footer {
         display: flex;
