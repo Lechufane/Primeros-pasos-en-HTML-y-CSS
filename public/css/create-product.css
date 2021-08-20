@@ -104,6 +104,11 @@ nav li {
 
 /*main*/
 
+main {
+    display: flex;
+    justify-content: center;
+}
+
 .create-form {
     padding: 20px 15px;
     margin-top: 147px;
