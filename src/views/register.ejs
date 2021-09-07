@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head',{title:"register"}) %>
+
+    <body>
+        <%- include('partials/headerNavbar') %>
+            <main>
+                <form action="/create-user" method="POST" class="user-form">
+                    <div class="control-form">
+                        <input class="control" type="text" name="name" placeholder="Nombre y apellido">
+                    </div>
+                    <div class="control-form">
+                        <input class="control" type="text" name="username" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="control-form">
+                        <h2>Fecha de nacimiento</h2>
+                        <input class="control" type="date" name="birthday" value="birthday">
+                    </div>
+                    <div class="control-form" id="radiobox">
+                        <h2>Perfil del usuario</h2>
+                        <div class="radio">
+                            <label> <input class="control" type="radio" name="user-profile" value="seller"> Vendedor</label>
+                        </div>
+                        <div class="radio">
+                            <label><input class="control" type="radio" name="user-profile" value="buyer"> Comprador</label>
+                        </div>
+                    </div>
+                    <div class="control-form" id="checkbox">
+                        <h3>Intereses</h3>
+                        <label><input type="checkbox" name="interest" value="electro"> Electro</label>
+                        <label><input type="checkbox" name="interest" value="moda"> Moda</label>
+                        <label><input type="checkbox" name="interest" value="hogar"> Hogar</label>
+                        <label><input type="checkbox" name="interest" value="jugueteria"> Juguetería</label>
+                        <label><input type="checkbox" name="interest" value="vida-sana"> Vida sana</label>
+                    </div>
+                    <button class="control" type="submit">Crear</button>
+                </form>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>
