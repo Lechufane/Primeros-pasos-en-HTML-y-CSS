@@ -10,9 +10,6 @@ const port = 3000;
 // ************ express() - (don't touch) ************
 const app = express();
 
-app.listen(process.env.PORT || port, () => {
-    console.log("Servidor iniciado");
-});
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(path.join(__dirname, "../public"))); // Necesario para los archivos estáticos en el folder /public
