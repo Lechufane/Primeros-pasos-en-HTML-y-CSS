@@ -5,11 +5,20 @@ const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 //Si no hay un objeto creado en el JSON da error, porque?
 const { validationResult } = require("express-validator");
-const { locals } = require("../app");
 
 const controller = {
     login: (req, res) => {
         res.render("login");
+    },
+    loginForm: (req, res) => {
+        let user = req.body;
+        let errors = validationResult(req);
+        console.log(errors.mapped());
+        if (errors.isEmpty()) {
+            return res.redirect("/products");
+        } else {
+            return res.render("login", { error: errors.mapped(), old: req.body });
+        }
     },
 
     register: (req, res) => {

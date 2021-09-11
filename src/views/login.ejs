@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head',{title: 'login'}) %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login - Mercado Liebre Argentina</title>
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Bootstrap Grid Stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <!-- Own Stylesheet -->
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
 
-    <body>
-        <%- include('partials/headerNavbar') %>
-            <main>
-                <div class="login-form">
-                    <form action="" method="GET">
-                        <input class="input" type="text" placeholder="Nombre de usuario">
-                        <input class="input" type="password" placeholder="Ingresá tu contraseña">
-                        <button class="input" type="submit">Enviar</button>
-                    </form>
-                </div>
+<body>
+    <%- include('partials/headerNavbar') %>
+        <main>
+            <div class="login-form">
+                <form action="/users/login" method="post" class="form">
+                    <div class="control-form">
+                        <input class="control" type="text" name="username" placeholder="Nombre de usuario">
+                    </div>
+                    <% if (locals.error && error.username) { %>
+                        <div class="error">
+                            <%= error.username.msg%>
+                        </div>
+                        <% } %>
+                            <div class="control-form">
+                                <input class="control" type="password" name="password" placeholder="Contraseña">
+                            </div>
+                            <% if (locals.error && error.password) { %>
+                                <div class="error">
+                                    <%= error.password.msg%>
+                                </div>
+                                <% } %>
+                                    <div class="control-form">
+                                        <button type="submit">Enviar</button>
+                                    </div>
 
-            </main>
-            <%- include('partials/footer') %>
-    </body>
+                </form>
+            </div>
+
+        </main>
+        <%- include('partials/footer') %>
+</body>
 
 </html>
