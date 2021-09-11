@@ -1,0 +1,74 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.user-form {
+    text-align: center;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #ffffff;
+    min-width: 320px;
+}
+
+.control-form {
+    margin: 5px 0px;
+}
+
+.control {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #ebebeb;
+}
+
+#radiobox {
+    display: flex;
+    flex-flow: wrap column;
+}
+
+#radiobox h3 {
+    width: 100%;
+    text-align: left;
+}
+
+.radio {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.radio label {
+    width: 25%;
+    text-align: left;
+}
+
+.radio input {
+    width: 15px;
+    text-align: right;
+}
+
+#checkbox {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+.user-form button {
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background-color: #1259c3;
+}
+
+.error {
+    display: block;
+    text-align: left;
+    color: red;
+}

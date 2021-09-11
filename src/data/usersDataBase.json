@@ -1,0 +1,19 @@
+[{
+        "name": "undefined",
+        "username": "undefined",
+        "email": "undefined",
+        "password": "undefined",
+        "birthday": "undefined",
+        "userProfile": "undefined",
+        "interest": "undefined"
+    },
+    {
+        "name": "Diego Villafañe",
+        "username": "DrogonFuMoon",
+        "email": "diego.villafane94@gmail.com",
+        "password": "chatarra9",
+        "birthday": "1994-04-12",
+        "userProfile": "seller",
+        "interest": "electro"
+    }
+]

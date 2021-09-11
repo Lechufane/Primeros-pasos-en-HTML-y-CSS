@@ -1,42 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head',{title:"register"}) %>
 
-    <body>
-        <%- include('partials/headerNavbar') %>
-            <main>
-                <form action="/create-user" method="POST" class="user-form">
-                    <div class="control-form">
-                        <input class="control" type="text" name="name" placeholder="Nombre y apellido">
-                    </div>
-                    <div class="control-form">
-                        <input class="control" type="text" name="username" placeholder="Nombre de usuario">
-                    </div>
-                    <div class="control-form">
-                        <h2>Fecha de nacimiento</h2>
-                        <input class="control" type="date" name="birthday" value="birthday">
-                    </div>
-                    <div class="control-form" id="radiobox">
-                        <h2>Perfil del usuario</h2>
-                        <div class="radio">
-                            <label> <input class="control" type="radio" name="user-profile" value="seller"> Vendedor</label>
-                        </div>
-                        <div class="radio">
-                            <label><input class="control" type="radio" name="user-profile" value="buyer"> Comprador</label>
-                        </div>
-                    </div>
-                    <div class="control-form" id="checkbox">
-                        <h3>Intereses</h3>
-                        <label><input type="checkbox" name="interest" value="electro"> Electro</label>
-                        <label><input type="checkbox" name="interest" value="moda"> Moda</label>
-                        <label><input type="checkbox" name="interest" value="hogar"> Hogar</label>
-                        <label><input type="checkbox" name="interest" value="jugueteria"> Juguetería</label>
-                        <label><input type="checkbox" name="interest" value="vida-sana"> Vida sana</label>
-                    </div>
-                    <button class="control" type="submit">Crear</button>
-                </form>
-            </main>
-            <%- include('partials/footer') %>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu cuenta - Mercado Liebre Argentina</title>
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Bootstrap Grid Stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <!-- Own Stylesheet -->
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <%- include('partials/headerNavbar') %>
+        <main>
+
+                            <form action="/users/register" method="POST" class="user-form">
+                                <div class="control-form">
+                                    <input class="control" type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name? old.name:""%>">    
+                                </div>
+                                <% if (locals.error && error.name) { %>
+                                 <div class="error">
+                                    <%= error.name.msg%>
+                                </div>
+                                <% } %>
+                                <div class="control-form">
+                                    <input class="control" type="text" name="username" placeholder="Nombre de usuario" value="<%= locals.old && old.username? old.username:""%>">
+                                </div>
+                                <% if (locals.error && error.name) { %>
+                                    <div class="error">
+                                       <%= error.username.msg%>
+                                   </div>
+                                   <% } %>
+                                <div class="control-form">
+                                    <input class="control" type="email" name="email" placeholder="Email" value="<%= locals.old && old.email? old.email:""%>">
+                                </div>
+                                <% if (locals.error && error.name) { %>
+                                    <div class="error">
+                                       <%= error.email.msg%>
+                                   </div>
+                                   <% } %>
+                                <div class="control-form">
+                                    <input class="control" type="password" name="password" placeholder="Contraseña">
+                                </div>
+                                <% if (locals.error && error.name) { %>
+                                    <div class="error">
+                                       <%= error.password.msg%>
+                                   </div>
+                                   <% } %>
+                                <div class="control-form">
+                                    <h2>Fecha de nacimiento</h2>
+                                    <input class="control" type="date" name="birthday">
+                                </div>
+                                <div class="control-form" id="radiobox">
+                                    <h3>Perfil del usuario</h3>
+                                    <div class="radio">
+                                        <label>Vendedor</label><input class="control" type="radio" name="user_profile" value="seller" <%=locals.old && old.user_profile==="seller" ? 'checked': '' %>>
+                                    </div>
+                                    <div class="radio">
+                                        <label>Comprador</label><input class="control" type="radio" name="user_profile" value="buyer" <%=locals.old && old.user_profile==="buyer" ? 'checked': '' %>>
+                                    </div>
+                                </div>
+                                <div class="control-form" id="checkbox">
+                                    <h3>Intereses</h3>
+                                    <div class="check">
+                                        <input type="checkbox" name="interest" value="electro" <%=locals.old && old.interest==="electro" ? 'checked': '' %>> <label>Electro</label>
+                                    </div>
+                                    <div class="check">
+                                        <input type="checkbox" name="interest" value="moda" <%=locals.old && old.interest==="moda" ? 'checked': '' %>><label>Moda</label>
+                                    </div>
+                                    <div class="check">
+                                        <input type="checkbox" name="interest" value="hogar" <%=locals.old && old.interest==="hogar" ? 'checked': '' %>><label>Hogar</label>
+                                    </div>
+                                    <div class="check">
+                                        <input type="checkbox" name="interest" value="jugueteria" <%=locals.old && old.interest==="jugueteria" ? 'checked': '' %>><label>Juguetería</label>
+                                    </div>
+                                    <div class="check">
+                                        <input type="checkbox" name="interest" value="vida-sana" <%=locals.old && old.interest==="vida-sana" ? 'checked': '' %>><label>Vida sana</label>
+                                    </div>
+    
+                                </div>
+                                <button class="control" type="submit">Crear</button>
+                            </form>
+
+        </main>
+        <%- include('partials/footer') %>
+</body>
 
 </html>
