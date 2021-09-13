@@ -5,4 +5,4 @@ const loginValidations = [
     body("password").notEmpty().withMessage("Ingresa tu contraseña"),
 ];
 
-module.exports = loginValidations
+module.exports = loginValidations;

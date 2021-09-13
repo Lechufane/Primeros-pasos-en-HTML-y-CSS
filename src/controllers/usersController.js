@@ -1,57 +1,85 @@
-const fs = require("fs");
-const path = require("path");
-
-const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-//Si no hay un objeto creado en el JSON da error, porque?
 const { validationResult } = require("express-validator");
+const User = require("../models/User");
+const bcrypt = require("bcryptjs");
 
 const controller = {
-    login: (req, res) => {
-        res.render("login");
-    },
-    loginForm: (req, res) => {
-        let user = req.body;
-        let errors = validationResult(req);
-        console.log(errors.mapped());
-        if (errors.isEmpty()) {
-            return res.redirect("/products");
-        } else {
-            return res.render("login", { error: errors.mapped(), old: req.body });
-        }
-    },
-
     register: (req, res) => {
         res.render("register");
     },
+
     registerForm: (req, res) => {
-        let newUser = req.body;
-        let errors = validationResult(req);
-        console.log(errors.mapped());
-        console.log(newUser);
-        if (errors.isEmpty()) {
-            return res.render("register", { userDetail: newUser });
-        } else {
+        let resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
             return res.render("register", {
-                error: errors.mapped(),
+                error: resultValidation.mapped(),
+                old: req.body,
+            });
+        }
+        let sameUser = User.findByField("email", req.body.email);
+
+        if (sameUser) {
+            return res.render("register", {
+                error: {
+                    email: {
+                        msg: "este usuario ya esta registrado",
+                    },
+                },
                 old: req.body,
             });
         }
 
-        //CODIGO ANTERIOR
-        /*let registerValidations = validationResult(req);
-if (registerValidations.errors.length > 0) {    
-console.log(registerValidations.errors);
-return res.render("register", {
-errors: registerValidations.errors.mapped(), //mapped transforma arrays en objetos literales.
-});
-} else {
-users.push(newUser);
-let usersJSON = JSON.stringify(users);
-fs.writeFileSync(usersFilePath, usersJSON);
-res.redirect("/products");
-}
-*/
+        let newUser = {
+            ...req.body,
+            password: bcrypt.hashSync(req.body.password, 10),
+        };
+
+        User.create(newUser);
+        return res.redirect("/users/login");
+    },
+
+    login: (req, res) => {
+        res.render("login");
+    },
+
+    loginForm: (req, res) => {
+        //validar errores
+        let resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render("login", {
+                error: resultValidation.mapped(),
+                old: req.body,
+            });
+        }
+        //comparar los datos enviados con la base de datos (por ahora json), recordar bcrypt.compareSync
+        let user = User.findByField("username", req.body.username);
+        if (user) {
+            let passOK = bcrypt.compareSync(req.body.password, user.password);
+            if (passOK) {
+                delete user.password;
+                req.session.userLogged = user;
+                res.redirect("/users/profile");
+            } else {
+                return res.render("login", {
+                    error: {
+                        password: {
+                            msg: "Credenciales invalidas",
+                        },
+                    },
+                });
+            }
+        }
+        return res.render("login", {
+            error: {
+                username: {
+                    msg: "Usuario no registrado",
+                },
+            },
+        });
+    },
+    profile: function(req, res) {
+        let user = req.session.userLogged;
+        res.render("profile", { user: user });
     },
 };
 

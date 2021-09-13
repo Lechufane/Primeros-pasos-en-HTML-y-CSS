@@ -18,7 +18,7 @@ const registerValidations = [
     .notEmpty()
     .withMessage("Debes completar el campo con una contraseña")
     .bail()
-    .isLength({ min: 6, max: 12 })
+    .isLength({ min: 6, max: 20 })
     .withMessage(
         "La contraseña debe tener un minimo de 6 caracteres y un maximo de 12"
     ),
