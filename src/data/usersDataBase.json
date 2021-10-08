@@ -1,1 +1,72 @@
-[{"id":1,"name":"Diego","username":"DrogonFuMoon","email":"diego.villafane94@gmail.com","password":"$2a$10$A8y88BJLFbbtSoe/5q0vl.qhvRUgrm.lDaGfa1HKHRkVkzqjuraJm","birthday":"1994-04-12","user_profile":"buyer","interest":["electro","moda","jugueteria"]},{"id":2,"name":"Yesica","username":"LaYesi","email":"yesica@layesi.com","password":"$2a$10$uZRraM5rhxOB7aIsfB9bpubxucs7HYxiYaD7yfE/3uCDSZzWPZ97G","birthday":"1994-04-12","user_profile":"buyer","interest":["electro","moda"]},{"id":3,"name":"TopoYiyo","username":"YiyoTopo","email":"topo@yiyo.com","password":"$2a$10$7xnJNYF0ibXvSTEpoA8thOQv1hxiA0QZwf2YLdOPxbzIbAwaD66By","birthday":"1998-03-31","user_profile":"buyer","interest":"hogar"},{"id":4,"name":"Dimm","username":"Dummedi","email":"sadsad@asdas.com","password":"$2a$10$dGGUcOoVql5Cm2iIQKk2Oegn0EVZPeAhJSTvH4msON/uC0t7acLQC","birthday":"1998-03-31","user_profile":"buyer","interest":"hogar"},{"id":5,"name":"Dimm","username":"Dummedi","email":"dimm@dummedi.com","password":"$2a$10$t7yMK0fbumObAV.b/KyMD.CY5A8PvXzum0HFnWcP84H7D5bfQbaCq","birthday":"1998-03-31","user_profile":"buyer","interest":"hogar"},{"id":6,"name":"daniel","username":"danielito","email":"daniel@danielito.com","password":"$2a$10$EO7PIFSZu8snpusyks5iWesxuRkCmFOK/Sv92745SPhMuXgLoVOhC","birthday":"2016-04-12","user_profile":"buyer","interest":"hogar"},{"id":7,"name":"Dieguito2","username":"Dieguito2","email":"eldieguo@gmail.com","password":"$2a$10$4fk0xzspylkvZHR51YoXd.LyqZD8or6BFcBa.AXfBx06X3bMm6SMu","birthday":"1994-04-12","user_profile":"buyer","interest":["electro","moda","jugueteria"]}]
+[
+  {
+    "id": 1,
+    "name": "Diego",
+    "username": "DrogonFuMoon",
+    "email": "diego.villafane94@gmail.com",
+    "password": "$2a$10$A8y88BJLFbbtSoe/5q0vl.qhvRUgrm.lDaGfa1HKHRkVkzqjuraJm",
+    "birthday": "1994-04-12",
+    "user_profile": "buyer",
+    "interest": ["electro", "moda", "jugueteria"]
+  },
+  {
+    "id": 2,
+    "name": "Yesica",
+    "username": "LaYesi",
+    "email": "yesica@layesi.com",
+    "password": "$2a$10$uZRraM5rhxOB7aIsfB9bpubxucs7HYxiYaD7yfE/3uCDSZzWPZ97G",
+    "birthday": "1994-04-12",
+    "user_profile": "buyer",
+    "interest": ["electro", "moda"]
+  },
+  {
+    "id": 3,
+    "name": "TopoYiyo",
+    "username": "YiyoTopo",
+    "email": "topo@yiyo.com",
+    "password": "$2a$10$7xnJNYF0ibXvSTEpoA8thOQv1hxiA0QZwf2YLdOPxbzIbAwaD66By",
+    "birthday": "1998-03-31",
+    "user_profile": "buyer",
+    "interest": "hogar"
+  },
+  {
+    "id": 4,
+    "name": "Dimm",
+    "username": "Dummedi",
+    "email": "sadsad@asdas.com",
+    "password": "$2a$10$dGGUcOoVql5Cm2iIQKk2Oegn0EVZPeAhJSTvH4msON/uC0t7acLQC",
+    "birthday": "1998-03-31",
+    "user_profile": "buyer",
+    "interest": "hogar"
+  },
+  {
+    "id": 5,
+    "name": "Dimm",
+    "username": "Dummedi",
+    "email": "dimm@dummedi.com",
+    "password": "$2a$10$t7yMK0fbumObAV.b/KyMD.CY5A8PvXzum0HFnWcP84H7D5bfQbaCq",
+    "birthday": "1998-03-31",
+    "user_profile": "buyer",
+    "interest": "hogar"
+  },
+  {
+    "id": 6,
+    "name": "daniel",
+    "username": "danielito",
+    "email": "daniel@danielito.com",
+    "password": "$2a$10$EO7PIFSZu8snpusyks5iWesxuRkCmFOK/Sv92745SPhMuXgLoVOhC",
+    "birthday": "2016-04-12",
+    "user_profile": "buyer",
+    "interest": "hogar"
+  },
+  {
+    "id": 7,
+    "name": "Dieguito2",
+    "username": "Dieguito2",
+    "email": "eldieguo@gmail.com",
+    "password": "$2a$10$4fk0xzspylkvZHR51YoXd.LyqZD8or6BFcBa.AXfBx06X3bMm6SMu",
+    "birthday": "1994-04-12",
+    "user_profile": "buyer",
+    "interest": ["electro", "moda", "jugueteria"]
+  }
+]

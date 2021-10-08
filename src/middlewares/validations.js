@@ -1,6 +1,8 @@
 const { body } = require("express-validator");
 
-const registerValidations = [
+const validations = {
+
+    register:  [
     body("name").notEmpty().withMessage("Debes completar el campo con tu nombre"),
     body("username")
     .notEmpty()
@@ -22,6 +24,14 @@ const registerValidations = [
     .withMessage(
         "La contraseña debe tener un minimo de 6 caracteres y un maximo de 12"
     ),
-];
+],
 
-module.exports = registerValidations;
+ login: [
+    body("username").notEmpty().withMessage("Ingresa tu usuario"),
+    body("password").notEmpty().withMessage("Ingresa tu contraseña"),
+]
+
+}
+
+
+module.exports = validations;

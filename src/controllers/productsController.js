@@ -76,7 +76,7 @@ const controller = {
     // Update - Method to update
     update: (req, res) => {
         let id = req.params.id;
-        products.forEach((prod) => {
+        let product = products.forEach((prod) => {
             if (prod.id == id) {
                 prod.name = req.body.name || prod.name;
                 prod.price = req.body.price || prod.price;
@@ -88,7 +88,7 @@ const controller = {
                 prod.image = req.file == undefined ? prod.image : req.file.filename;
             }
         });
-        let productsJSON = JSON.stringify(products);
+        let productsJSON = JSON.stringify(product);
         fs.writeFileSync(productsFilePath, productsJSON);
         res.redirect("/products/detail/" + id);
     },
@@ -97,10 +97,6 @@ const controller = {
         let productsJSON = fs.readFileSync(productsFilePath, "utf-8");
         let allProducts = JSON.parse(productsJSON);
         let id = req.params.id;
-
-        /*gracias a la variable allProducts no necesito tocar el archivo JSON
-ni el objeto en el que se covierte globalmente, 
-sino trabajar con un scope local*/
 
         allProducts = allProducts.filter((prod) => prod.id != id);
         allProducts.forEach((prod, i) => {

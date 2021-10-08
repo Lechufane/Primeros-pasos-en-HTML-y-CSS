@@ -1,6 +1,6 @@
 // ************ Require's ************
 const createError = require("http-errors");
-const cookieParser = require("cookie-parser");
+const cookies = require("cookie-parser");
 const express = require("express");
 const logger = require("morgan");
 const path = require("path");
@@ -12,18 +12,18 @@ const app = express();
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(path.join(__dirname, "../public"))); // Necesario para los archivos estáticos en el folder /public
+app.use(cookies()); //Para trabajar con las cookies
 app.use(express.urlencoded({ extended: false })); //Para poder capturar datos como json y objetos literales
 app.use(express.json()); //Para poder capturar datos como json y objetos literales
 app.use(logger("dev")); //Para que envie los cambios y lo que va pasando por consola
-app.use(cookieParser()); //Para trabajar con las cookies
 app.use(methodOverride("_method")); // Para poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(
-    //session para mantener iniciada la cuenta
-    session({
-        secret: "cookie_secret",
-        resave: false,
-        saveUninitialized: false,
-    })
+  //session para mantener iniciada la cuenta
+  session({
+    secret: "cookie_secret",
+    resave: false,
+    saveUninitialized: false,
+  })
 );
 
 // ************ Template Engine - (don't touch) ************
@@ -46,14 +46,14 @@ app.use((req, res, next) => next(createError(404)));
 
 // ************ error handler ************
 app.use((err, req, res, next) => {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.path = req.path;
-    res.locals.error = req.app.get("env") === "development" ? err : {};
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.path = req.path;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
-    // render the error page
-    res.status(err.status || 500);
-    res.render("error");
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
 });
 
 // ************ exports app - dont'touch ************

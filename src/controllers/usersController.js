@@ -56,8 +56,13 @@ const controller = {
         if (user) {
             let passOK = bcrypt.compareSync(req.body.password, user.password);
             if (passOK) {
-                delete user.password;
                 req.session.userLogged = user;
+                delete user.password;
+
+                if (req.body.remember_me != undefined) {
+                    res.cookie("recordame", user.id, { maxAge: 60000 });
+                }
+
                 res.redirect("/users/profile");
             } else {
                 return res.render("login", {
