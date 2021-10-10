@@ -54,16 +54,18 @@ const controller = {
         //comparar los datos enviados con la base de datos (por ahora json), recordar bcrypt.compareSync
         let user = User.findByField("username", req.body.username);
         if (user) {
+            //comparamos contraseñas
             let passOK = bcrypt.compareSync(req.body.password, user.password);
             if (passOK) {
                 req.session.userLogged = user;
                 delete user.password;
-
+                //definimos las cookies y redirigimos al perfil
                 if (req.body.remember_me != undefined) {
                     res.cookie("recordame", user.id, { maxAge: 60000 });
                 }
+                console.log(req.cookies.recordame);
 
-                res.redirect("/users/profile");
+                return res.redirect("/users/profile");
             } else {
                 return res.render("login", {
                     error: {
